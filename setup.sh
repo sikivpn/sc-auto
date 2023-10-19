@@ -2,11 +2,11 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-# https://raw.githubusercontent.com/yasanata/permission/main/ipmini 
+# https://raw.githubusercontent.com/sikivpn/permission/main/ipmini 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 REGAN="https://api.telegram.org/bot6406070059:AAFIpAWnbnnuikvxeWgz4rJwA5SrCVYe5VA/sendMessage?chat_id=6061644931&text=DAFTAR+$MYIP"
 curl $REGAN >/dev/null 2>&1
-Name=$(curl -sS https://raw.githubusercontent.com/yasanata/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/sikivpn/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini
 clear
